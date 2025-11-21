@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Library Management System</h2>
+
+    <label>Book Title:</label><br>
+    <input type="text" id="title"><br><br>
+
+    <label>Publication Year:</label><br>
+    <input type="text" id="year"><br><br>
+
+    <button onclick="addBook()">Add Book</button>
+
+    <table id="bookTable">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+        </tr>
+    </table>
+
+    <script>
+        function addBook() {
+            let title = document.getElementById("title").value.trim();
+            let year = document.getElementById("year").value.trim();
+            let currentYear = new Date().getFullYear();
+
+            // Title validation: alphabet only, no spaces
+            let titleRegex = /^[A-Za-z]+$/;
+
+            if (!titleRegex.test(title)) {
+                alert("Title must contain only alphabetic characters (no spaces, numbers, or special characters).");
+                return;
+            }
+
+            // Year validation: 4-digit, 1900 to current year
+            let yearRegex = /^[0-9]{4}$/;
+
+            if (!yearRegex.test(year) || year < 1900 || year > currentYear) {
+                alert("Year must be a valid 4-digit number between 1900 and " + currentYear);
+                return;
+            }
+
+            // Add row to table
+            let table = document.getElementById("bookTable");
+            let row = table.insertRow(-1);
+            let cellTitle = row.insertCell(0);
+            let cellYear = row.insertCell(1);
+
+            cellTitle.innerHTML = title;
+            cellYear.innerHTML = year;
+
+            // Row color
+            if (year < 2000) {
+                row.style.backgroundColor = "lightgray";
+            } else {
+                row.style.backgroundColor = "lightgreen";
+            }
+
+            // Clear inputs
+            document.getElementById("title").value = "";
+            document.getElementById("year").value = "";
+        }
+    </script>
+
+</body>
+</html>
