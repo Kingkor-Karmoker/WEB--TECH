@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overflow Handling Box</title>
+
+    <style>
+        /* Common box styling */
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f3f3f3;
+        }
+
+        /* overflow: visible
+           → Content spills outside the box without clipping or scrollbars */
+        .visible-box {
+            overflow: visible;
+        }
+
+        /* overflow: hidden
+           → Extra content is clipped (cut off) and no scrollbars appear */
+        .hidden-box {
+            overflow: hidden;
+        }
+
+        /* overflow: scroll
+           → Always shows scrollbars even if content fits */
+        .scroll-box {
+            overflow: scroll;
+        }
+
+        /* overflow: auto
+           → Shows scrollbars only when necessary (if content is too big) */
+        .auto-box {
+            overflow: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Overflow Handling Demo</h2>
+
+    <h3>overflow: visible</h3>
+    <div class="box visible-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed dignissim
+        libero. Quisque porttitor, lorem a facilisis ultricies, lorem mauris commodo orci,
+        eget dictum tortor arcu eget velit. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus.
+    </div>
+
+    <h3>overflow: hidden</h3>
+    <div class="box hidden-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed dignissim
+        libero. Quisque porttitor, lorem a facilisis ultricies, lorem mauris commodo orci,
+        eget dictum tortor arcu eget velit. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus.
+    </div>
+
+    <h3>overflow: scroll</h3>
+    <div class="box scroll-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed dignissim
+        libero. Quisque porttitor, lorem a facilisis ultricies, lorem mauris commodo orci,
+        eget dictum tortor arcu eget velit. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus.
+    </div>
+
+    <h3>overflow: auto</h3>
+    <div class="box auto-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed dignissim
+        libero. Quisque porttitor, lorem a facilisis ultricies, lorem mauris commodo orci,
+        eget dictum tortor arcu eget velit. Pellentesque habitant morbi tristique senectus et
+        netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus.
+    </div>
+
+</body>
+</html>
